@@ -13,7 +13,7 @@ kubectl exec -it bash -- /bin/bash
 
 ### shut it down
 ```
-kubectl delete bash --grace-period 0
+kubectl delete pod bash --grace-period 0 --force
 
 # or use ctrl-C to kill skaffold process
 ```
