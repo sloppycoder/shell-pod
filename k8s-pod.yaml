@@ -4,5 +4,6 @@ metadata:
   name: bash
 spec:
   containers:
-  - name:bash
+  - name: bash
     image: gcr.io/k8s-skaffold/skaffold-example
+

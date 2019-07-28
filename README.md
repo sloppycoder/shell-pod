@@ -8,12 +8,12 @@ skaffold dev
 
 ### Access shell inside the pod
 ```
-kubectl exec -it shell -- /bin/bash
+kubectl exec -it bash -- /bin/bash
 ```
 
 ### shut it down
 ```
-kubectl delete shell
+kubectl delete bash --grace-period 0
 
 # or use ctrl-C to kill skaffold process
 ```
