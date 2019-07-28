@@ -1,0 +1,13 @@
+#!/bin/bash
+
+command=$1
+if [[ "$command" =~ ^(start|stop)$ ]]; then
+    instance_ids=$(aws ec2 describe-instances --query 'Reservations[].Instances[].InstanceId' --filters "Name=tag:Name,Values=minikube" --output text)
+    aws ec2 ${command}-instances --instance-ids $instance_ids --output text
+else
+    echo unknown action $command
+    exit 1
+fi
+
+
+
